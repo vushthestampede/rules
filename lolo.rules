@@ -3,5 +3,4 @@
 # Curl User-Agent detection on intranet
 # Alerte tcp pour l'utilisation de la commande CURL venant de patout vers mon reseau $HOME_NET, ici le 192.168.0.0/16
 
-alert tcp any any -> $HOME_NET [80,443] (msg:"PIKACHU WIN"; flow:established,to_server; http.user_agent; content:"curl"; classtype:targeted-activity; sid:10000002; rev:1;)
-
+alert tcp any any -> $HOME_NET any (msg:"PIKACHU WIN"; flow:established,to_server; http.user_agent; content:"curl"; classtype:targeted-activity; sid:10000002; rev:1;)
