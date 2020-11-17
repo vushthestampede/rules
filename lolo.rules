@@ -1,6 +1,6 @@
-# curl.rules
+# sqlmap.rules
 
-# Curl User-Agent detection
-# Alerte tcp pour l'utilisation de la commande CURL vers mon réseau $HOME_NET, ici le 192.168.0.0/16, sur les ports 80 et 443
+# sqlmap User-Agent detection
+# Alerte tcp pour l'utilisation de la commande SQLMAP vers mon réseau $HOME_NET, ici le 192.168.0.0/16, sur les ports 80 et 443
 
-alert tcp any any -> $HOME_NET [80,443] (msg:"CURL Proof rules : Pikachu Go!"; flow:established,to_server; http.user_agent; content:"curl"; classtype:targeted-activity-custom; sid:10000002; rev:1;)
+alert tcp any any -> $HOME_NET [80,443] (msg:"sqlmap Proof rules : Target by La DSI-BSCC"; flow:established,to_server; http.user_agent; content:"sqlmap"; classtype:targeted-activity; sid:10000002; rev:1;)
