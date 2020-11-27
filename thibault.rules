@@ -1,4 +1,4 @@
 # wpscan.rule
 # Detection sur le content du "user-agent"
 
-alert tcp any any -> any [80,443] (msg:"WPScan has been detected by Thibault"; flow:established,to_server; http.user_agent; content:"wpscan"; classtype:targeted-activity; sid:10000666; rev:1;)
+alert tcp any any -> any [80,443] (msg:"WPScan has been detected by Thibault"; flow:established,to_server; http.user_agent; content:"WPScan"; classtype:targeted-activity; sid:10000666; rev:1;)
