@@ -1,6 +1,6 @@
 # dirbuster.rules
 
 # Dirbuster User-Agent detection on intranet
-# Cette regle detecte les commandes dirb qui vient de toutes les ip sur tous les ports vers mon réseau sur les ports 80 et 443 
+# Cette regle detecte les commandes dirb qui viennent de toutes les ip sur tous les ports vers mon réseau sur les ports 80 et 443 
 
 alert tcp any  any -> $HOME_NET [80,443] (msg:"Dirb_ProoF_Nicolas_M_certification valid"; flow:established,to_server; http.user_agent; content:"DirBuster"; classtype:targeted-activity; sid:100001337; rev:1;)
